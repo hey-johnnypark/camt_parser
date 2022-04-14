@@ -111,6 +111,10 @@ module CamtParser
       def information
         @information ||= @xml_data.xpath('NtryDtls/TxDtls/Refs/PmtInfId/text()').text
       end
+
+      def msg_id
+        @msg_id ||= @xml_data.xpath('NtryDtls/Btch/MsgId/text()').text
+      end
     end
   end
 end

@@ -27,6 +27,7 @@ describe CamtParser::Format053::Entry do
   specify { expect(ex_entry.debit?).to eq(true) }
   specify { expect(ex_entry.credit?).to eq(false) }
   specify { expect(ex_entry.sign).to eq(-1) }
+  specify { expect(ex_entry.msg_id).to eq("") }
 
   specify { expect(ex_entry.name).to eq("Testkonto Nummer 2") }
   specify { expect(ex_entry.iban).to eq("DE09300606010012345671") }
