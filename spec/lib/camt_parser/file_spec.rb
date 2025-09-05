@@ -8,9 +8,20 @@ describe CamtParser::File do
       }.to raise_exception(CamtParser::Errors::UnsupportedNamespaceError, 'urn:iso:std:iso:20022:tech:xsd:camt.053.001.03')
     end
 
-    it "does not raise an exception for a valid namespace" do
+    it "does not raise an exception for a valid namespace 053.001.02" do
       expect(CamtParser::Format053::Base).to receive(:new)
-      described_class.parse 'spec/fixtures/valid_namespace.xml'
+      described_class.parse 'spec/fixtures/valid_namespaces/valid_namespace_053.001.02.xml'
     end
+
+    it "does not raise an exception for a valid namespace 053.001.04" do
+      expect(CamtParser::Format053::Base).to receive(:new)
+      described_class.parse 'spec/fixtures/valid_namespaces/valid_namespace_053.001.04.xml'
+    end
+
+    it "does not raise an exception for a valid namespace 053.001.08" do
+      expect(CamtParser::Format053::Base).to receive(:new)
+      described_class.parse 'spec/fixtures/valid_namespaces/valid_namespace_053.001.08.xml'
+    end
+    
   end
 end
